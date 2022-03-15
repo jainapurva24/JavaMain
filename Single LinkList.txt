@@ -1,0 +1,123 @@
+import java.util.*;
+class sll2
+	{
+	
+	class node
+	{
+		int data;
+		node next;
+		
+		node(int data)
+		{
+			this.data = data;
+			next = null;
+		}
+	}
+	
+	public Node first = null;
+	public Node last = null;
+	void create(int data)
+
+	void insert(int data)
+	{
+		
+		node newNode = new Node(data);
+
+		if(first == null)
+		{
+			first = newNode;
+		}
+		else
+		{
+			last.next = newNode;
+		}
+		last = newNode;
+		
+	}
+		void addMid(int data)
+	{
+		int p,i;
+		Node nn = new Node(data);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter Position :");
+		p=sc.nextInt();
+		Node q=first;
+		for(i=1;i<=p-2;i++)
+		{
+			q=q.next;
+			q.next=nn;
+		}
+	}
+	
+		
+	
+	void delBeg()
+	{
+		first=first.next;
+	}
+
+	void disp()
+	{
+		Node q = first;
+		white(q!=null)
+		{
+			System.out.println(q.data);
+			q=q.next;	
+		}	
+	}
+}
+
+	void disp(){
+		 
+		node currNode = first;
+
+		while(currNode!=null){
+			
+			System.out.print(currNode.data+" --> ");
+			currNode = currNode.next;
+		}
+		System.out.print("null");
+
+	}
+	
+	
+	public static void main(String args[])
+	{
+		sll2 x = new sll2();
+		
+		int ch,data;
+		
+		Scanner sc = new Scanner(System.in);
+
+		do{
+			System.out.println("\n1. insert");
+			System.out.println("2. Display");
+			System.out.println("3. Exit");
+
+			System.out.print("\nEnter The Choice: ");
+			ch = sc.nextInt();
+
+			switch (ch) {
+				case 1:
+					System.out.print("\nEnter The Data: ");
+					data = sc.nextInt();
+					x.insert(data);
+					break;
+				
+				case 2:
+						x.disp();
+					break;	
+			
+				case 3:
+					System.out.println("\nExit");
+					break;		
+
+				default:
+					break;
+			}
+
+		}while(ch!=3);
+
+	}
+}
