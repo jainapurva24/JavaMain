@@ -1,0 +1,111 @@
+import java.util.*;
+class sllInsert{
+	
+	class node{
+		int data;
+		node next;
+		
+		node(int data){
+			this.data = data;
+			next = null;
+		}
+	}
+	
+	node first=null , last=null;
+
+	void insert(int data){
+		
+		node newNode = new node(data);
+
+		if(first == null){
+			first = newNode;
+		}
+		else{
+			last.next = newNode;
+		}
+		last = newNode;
+		
+	}
+	void addBegin(int data){
+		node Begin = new node(data);
+		
+			Begin.next = first;
+			first = Begin;
+	}
+	
+	void addLast(int data){
+		node end = new node(data);
+		
+			end.next = last;
+			last = end;
+	}
+	
+
+	void disp(){
+		 
+		node currNode = first;
+
+		while(currNode!=null){
+			
+			System.out.print(currNode.data+" --> ");
+			currNode = currNode.next;
+		}
+		System.out.print("null");
+
+	}
+	
+	
+	public static void main(String args[])
+	{
+		sll2 x = new sll2();
+		
+		int ch,data;
+		
+		Scanner sc = new Scanner(System.in);
+
+		do{
+			System.out.println("\n1. Create");
+			System.out.println("2. Add At Begin");
+			System.out.println("3. Add At Last");
+			System.out.println("4. Display");
+			System.out.println("5. Exit");
+
+			System.out.print("\nEnter The Choice: ");
+			ch = sc.nextInt();
+
+			switch (ch) {
+				case 1:
+					System.out.print("\nEnter The Data: ");
+					data = sc.nextInt();
+					x.insert(data);
+					break;
+				
+				case 2:
+					System.out.print("\nEnter The Data: ");
+					data = sc.nextInt();
+					x.addBegin(data);
+					break;
+					
+				case 3: 
+					System.out.print("\nEnter The Data: ");
+					data = sc.nextInt();
+					x.addLast(data);
+					break;	
+				
+				
+				case 4:
+						x.disp();
+					break;	
+			
+				case 5:
+					System.out.println("\nExit");
+					break;		
+
+				default:
+					break;
+			}
+
+		}while(ch!=5);
+
+	}
+}
