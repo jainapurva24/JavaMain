@@ -1,0 +1,52 @@
+class Shape{
+	double d1,d2;
+	
+	Shape(double i, double j)
+	{
+		d1 = i;
+		d2 = j;
+	}
+	void area()
+	{
+		
+	}
+	
+}
+class Rect extends Shape{
+	
+	Rect(double i, double j)
+	{
+		super(i,j);
+	}
+	void area()
+	{
+		System.out.println("\n Area Of Rect: "+d1*d2);
+	}
+	
+}
+class Tri extends Shape{
+	
+	Tri(double i, double j)
+	{
+		super(i,j);
+	}
+	void area()
+	{
+		System.out.println("\n Area Of Tri: "+0.5*d1*d2);
+	}
+}
+class Inh6
+{
+	public static void main(String args[])
+	{
+		Shape s;
+		Rect r = new Rect(10,20);
+		Tri t = new Tri(10, 20);
+		
+		s = r;
+		s.area();
+		
+		s = t;
+		s.area();
+	}
+}
