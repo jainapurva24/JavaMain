@@ -1,0 +1,51 @@
+class sll1
+{
+	class node{
+		
+		int data;
+		node next;
+		
+		node(int data){
+			
+			this.data = data;
+			next = null;
+			
+		}
+	}
+	
+	node first = null,last = null;
+	
+	void insert(int data){
+		node newNode = new node(data);
+		
+		if(first== null){
+			first= newNode;				//makes new node as head of list(and last is also head)
+		}									// [1,null] 
+		else{
+			last.next = newNode;		//if there is no null in head(last will traverse ) then .....
+		}										// [1,nxtAdd] [2,]
+			last = newNode;				//......next(new) node is last node
+			
+	}
+	void disp(){
+		node currNode = first;
+		while(currNode!=null){
+			
+			System.out.print(currNode.data +" --> ");
+			currNode = currNode.next;
+		}
+		System.out.print("null");
+	}
+	
+	public static void main(String args[])
+	{
+		sll1 x = new sll1();
+		
+		x.insert(10);
+		x.insert(20);
+		x.insert(30);
+		x.insert(40);
+		x.insert(50);
+		x.disp();
+	}
+}
